@@ -130,11 +130,11 @@ if __name__ == '__main__':
         # ve 12:00
         if current_time.tm_hour == 12 and current_time.tm_min == 0:
             post_daily_image()
-            next_run = 24 * 60 * 60
+            next_run = 4 * 60 * 60
         # v 18:00
         elif current_time.tm_hour == 18 and current_time.tm_min == 0:
             like_follow_comment()
-            next_run = 24 * 60 * 60
+            next_run = 18 * 60 * 60
         else:
             # Calculate time to the next scheduled run (noon or 6 PM)
             next_noon = 12 - current_time.tm_hour
