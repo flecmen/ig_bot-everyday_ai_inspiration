@@ -8,60 +8,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 hashtags = ['quote', 'inspiration', 'ai', 'tech']
-comments = [
-    "This is so inspiring!",
-    "Such a great quote!",
-    "Love this!",
-    "Positive vibes!",
-    "So true!",
-    "Words to live by!",
-    "Amazing insight!",
-    "Uplifting!",
-    "Thanks for sharing!",
-    "This is exactly what I needed today!",
-    "So powerful!",
-    "Such a motivator!",
-    "Great perspective!",
-    "Beautiful words!",
-    "Awesome!",
-    "Fantastic!",
-    "Incredible!",
-    "Perfectly said!",
-    "Positively impacting!",
-    "Loving this!",
-    "So wise!",
-    "Your words are gold!",
-    "Truly inspiring!",
-    "Thanks for the reminder!",
-    "Positive thoughts!",
-    "Such an encouragement!",
-    "Exactly what I needed to hear!",
-    "So uplifting!",
-    "Brilliant!",
-    "Your posts always brighten my day!",
-    "This is what the world needs!",
-    "Wise words!",
-    "You have a gift with words!",
-    "This resonates with me!",
-    "Love the positivity!",
-    "So inspiring!",
-    "You always bring a smile to my face!",
-    "Always spreading joy!",
-    "Positive energy!",
-    "Love the message!",
-    "You are amazing!",
-    "This quote is everything!",
-    "Keep spreading the love!",
-    "The world needs more people like you!",
-    "You always know how to inspire!",
-    "Thanks for being a light in this world!",
-    "Such an inspiration!",
-    "Keep shining!",
-    "Love the positivity you bring!",
-    "You always brighten my day!",
-    "You have a way with words!",
-    "Thank you for spreading joy!",
-]
 
 
 def generate_image():
@@ -97,9 +43,17 @@ def post_image(filename):
     print('image uploaded successfully')
 
 
+def delete_image_locally(filename):
+    print('deleting image ' + filename + ' locally')
+    os.remove(filename)
+    print('image deleted successfully')
+
+
 def post_daily_image():
     filename = generate_image()
     post_image(filename)
+    time.sleep(30)
+    delete_image_locally(filename)
 
 
 if __name__ == '__main__':
